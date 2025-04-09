@@ -10,5 +10,5 @@ GPIOB->CRH=0X11111111;
 }
 void loop() {
   Ent=GPIOA->IDR;
-  GPIOB->BSRR=Ent;
+  GPIOB->BSRR=~Ent;
 }

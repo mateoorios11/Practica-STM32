@@ -1,5 +1,5 @@
 #include <Arduino.h>
-uint16_t Ent;
+uint16_t Ent, suma;
 void setup() {
 RCC->APB2ENR|=RCC_APB2ENR_IOPAEN_Msk;
 RCC->APB2ENR|=RCC_APB2ENR_IOPBEN_Msk;
@@ -9,6 +9,9 @@ GPIOB->CRL=0X11111111;
 GPIOB->CRH=0X11111111;
 }
 void loop() {
-  Ent=GPIOA->IDR;
-  GPIOB->BSRR=Ent;
+  Ent=GPIOB->IDR;
+  suma= Ent+0x23;
+  GPIOA->BSRR=Ent;
+
+
 }
