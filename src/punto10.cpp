@@ -10,7 +10,7 @@ GPIOB->CRH=0X11111111;
 }
 void loop() {
   Ent=GPIOB->IDR;
-  Nor= Ent|^0x23;
+  Nor= Ent|!  0x23;
   GPIOA->BSRR=Ent;
 
 
